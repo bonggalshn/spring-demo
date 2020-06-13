@@ -5,8 +5,7 @@ import com.example.demo.core.model.Processor;
 import com.example.demo.impl.transaction.context.TransactionContext;
 import com.example.demo.impl.transaction.result.TransactionDetailResult;
 
-public class GetTransactionDetailInfoProcessor implements Processor <TransactionContext> {
-
+public class SetTransactionDetailAmountProcessor implements Processor<TransactionContext> {
     @Override
     public boolean isSkipped(TransactionContext context) {
         return false;
@@ -19,8 +18,11 @@ public class GetTransactionDetailInfoProcessor implements Processor <Transaction
 
     @Override
     public void doProcess(TransactionContext context) {
+        Money transactionAmount = new Money();
+        transactionAmount.setCurrency("IDR");
+        transactionAmount.setAmount(25000);
+
         TransactionDetailResult result = (TransactionDetailResult) context.getResult();
-        result.setTransactionTitle("Sample Transaction");
-        result.setSuccess(true);
+        result.setTransactionAmount(transactionAmount);
     }
 }

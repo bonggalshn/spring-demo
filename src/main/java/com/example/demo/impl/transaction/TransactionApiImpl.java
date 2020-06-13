@@ -1,21 +1,17 @@
 package com.example.demo.impl.transaction;
 
 import com.example.demo.api.TransactionApi;
-import com.example.demo.core.model.ProcessContext;
 import com.example.demo.core.model.Processor;
-import com.example.demo.core.model.request.BaseRequest;
-import com.example.demo.core.model.result.BaseResult;
 import com.example.demo.impl.transaction.context.TransactionContext;
 import com.example.demo.impl.transaction.request.TransactionDetailRequest;
 import com.example.demo.impl.transaction.result.TransactionDetailResult;
-import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.List;
 
 
 public class TransactionApiImpl implements TransactionApi {
 
-    private List<Processor<ProcessContext<BaseRequest, BaseResult>>> queryTransactionDetailProcessors;
+    private List<Processor<TransactionContext>> queryTransactionDetailProcessors;
 
     @Override
     public TransactionDetailResult queryTransactionDetail(TransactionDetailRequest request) {
@@ -32,7 +28,7 @@ public class TransactionApiImpl implements TransactionApi {
         return (TransactionDetailResult) context.getResult();
     }
 
-    public void setQueryTransactionDetailProcessors(List<Processor<ProcessContext<BaseRequest, BaseResult>>> queryTransactionDetailProcessors) {
+    public void setQueryTransactionDetailProcessors(List<Processor<TransactionContext>> queryTransactionDetailProcessors) {
         this.queryTransactionDetailProcessors = queryTransactionDetailProcessors;
     }
 }

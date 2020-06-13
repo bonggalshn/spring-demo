@@ -6,11 +6,13 @@
    http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
 
     <bean id="getTransactionDetailInfoProcessor" class="com.example.demo.impl.transaction.processor.GetTransactionDetailInfoProcessor"/>
+    <bean id="setTransactionDetailAmountProcessor" class="com.example.demo.impl.transaction.processor.SetTransactionDetailAmountProcessor"/>
     <bean id="transactionApi" class="com.example.demo.impl.transaction.TransactionApiImpl">
         <property name="queryTransactionDetailProcessors">
-            <util:list>
+            <list>
                 <ref bean="getTransactionDetailInfoProcessor"/>
-            </util:list>
+                <ref bean="setTransactionDetailAmountProcessor"/>
+            </list>
         </property>
     </bean>
 
