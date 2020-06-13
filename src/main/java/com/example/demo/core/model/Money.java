@@ -1,4 +1,4 @@
-package com.example.demo.core.object;
+package com.example.demo.core.model;
 
 public class Money {
     private String currency;

@@ -1,4 +1,4 @@
-package com.example.demo.core.error;
+package com.example.demo.core.model.error;
 
 public class ErrorContext extends BaseErrorContext{
 }

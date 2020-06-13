@@ -18,10 +18,6 @@ public class TransactionController {
 
     @PostMapping(value = "/1")
     public TransactionDetailResult query(@RequestBody TransactionDetailRequest request){
-        return transactionApi.getTransactionDetail(request);
-    }
-
-    public void setTransactionApi(TransactionApi transactionApi) {
-        this.transactionApi = transactionApi;
+        return transactionApi.queryTransactionDetail(request);
     }
 }

@@ -1,4 +1,4 @@
-package com.example.demo.core.request;
+package com.example.demo.core.model.request;
 
 import java.util.UUID;
 

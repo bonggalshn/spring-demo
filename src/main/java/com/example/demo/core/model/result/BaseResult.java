@@ -1,6 +1,6 @@
-package com.example.demo.core.result;
+package com.example.demo.core.model.result;
 
-import com.example.demo.core.error.ErrorContext;
+import com.example.demo.core.model.error.ErrorContext;
 
 import java.util.Map;
 
