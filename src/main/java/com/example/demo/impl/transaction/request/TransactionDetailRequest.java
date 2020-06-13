@@ -1,6 +1,6 @@
-package com.example.api.transaction.request;
+package com.example.demo.impl.transaction.request;
 
-import com.example.core.request.BaseRequest;
+import com.example.demo.core.request.BaseRequest;
 
 public class TransactionDetailRequest extends BaseRequest {
     private String transactionId;

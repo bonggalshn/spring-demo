@@ -1,7 +1,7 @@
-package com.example.api.transaction.result;
+package com.example.demo.impl.transaction.result;
 
-import com.example.core.object.Money;
-import com.example.core.result.BaseResult;
+import com.example.demo.core.object.Money;
+import com.example.demo.core.result.BaseResult;
 
 import java.util.Date;
 

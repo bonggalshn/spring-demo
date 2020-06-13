@@ -1,4 +1,4 @@
-package com.example.core.error;
+package com.example.demo.core.error;
 
 import java.util.Map;
 
