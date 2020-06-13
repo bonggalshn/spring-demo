@@ -16,7 +16,7 @@ public class TransactionController {
     @Autowired
     private TransactionApi transactionApi;
 
-    @PostMapping(value = "/1")
+    @PostMapping(value = "/queryDetail")
     public TransactionDetailResult query(@RequestBody TransactionDetailRequest request){
         return transactionApi.queryTransactionDetail(request);
     }
