@@ -7,11 +7,17 @@
 
     <bean id="getTransactionDetailInfoProcessor" class="com.example.demo.impl.transaction.processor.GetTransactionDetailInfoProcessor"/>
     <bean id="setTransactionDetailAmountProcessor" class="com.example.demo.impl.transaction.processor.SetTransactionDetailAmountProcessor"/>
+    <bean id="getTransactionListInfoProcessor" class="com.example.demo.impl.transaction.processor.GetTransactionListInfoProcessor"/>
     <bean id="transactionApi" class="com.example.demo.impl.transaction.TransactionApiImpl">
         <property name="queryTransactionDetailProcessors">
             <list>
                 <ref bean="getTransactionDetailInfoProcessor"/>
                 <ref bean="setTransactionDetailAmountProcessor"/>
+            </list>
+        </property>
+        <property name="queryTransactionListProcessors">
+            <list>
+                <ref bean="getTransactionListInfoProcessor"/>
             </list>
         </property>
     </bean>

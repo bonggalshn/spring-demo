@@ -1,4 +1,4 @@
-package com.example.demo.impl.transaction.result;
+package com.example.demo.api.transaction.result;
 
 import com.example.demo.core.model.Money;
 import com.example.demo.core.model.result.BaseResult;

@@ -1,4 +1,4 @@
-package com.example.demo.impl.transaction.request;
+package com.example.demo.api.transaction.request;
 
 import com.example.demo.core.model.request.BaseRequest;
 
