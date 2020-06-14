@@ -1,8 +1,10 @@
 package com.example.demo.controller;
 
-import com.example.demo.api.TransactionApi;
-import com.example.demo.impl.transaction.request.TransactionDetailRequest;
-import com.example.demo.impl.transaction.result.TransactionDetailResult;
+import com.example.demo.api.transaction.TransactionApi;
+import com.example.demo.api.transaction.request.TransactionDetailRequest;
+import com.example.demo.api.transaction.request.TransactionListRequest;
+import com.example.demo.api.transaction.result.TransactionDetailResult;
+import com.example.demo.api.transaction.result.TransactionListResult;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -17,7 +19,12 @@ public class TransactionController {
     private TransactionApi transactionApi;
 
     @PostMapping(value = "/queryDetail")
-    public TransactionDetailResult query(@RequestBody TransactionDetailRequest request){
+    public TransactionDetailResult queryDetail(@RequestBody TransactionDetailRequest request){
         return transactionApi.queryTransactionDetail(request);
+    }
+
+    @PostMapping(value = "/queryList")
+    public TransactionListResult queryList(@RequestBody TransactionListRequest request){
+        return transactionApi.queryTransactionList(request);
     }
 }

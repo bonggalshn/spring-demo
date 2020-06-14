@@ -3,8 +3,8 @@ package com.example.demo.impl.transaction.processor;
 import com.example.demo.core.model.Processor;
 import com.example.demo.core.model.util.AssertUtil;
 import com.example.demo.impl.transaction.context.TransactionContext;
-import com.example.demo.impl.transaction.request.TransactionDetailRequest;
-import com.example.demo.impl.transaction.result.TransactionDetailResult;
+import com.example.demo.api.transaction.request.TransactionDetailRequest;
+import com.example.demo.api.transaction.result.TransactionDetailResult;
 import com.example.demo.repository.transaction.TransactionRepository;
 import com.example.demo.repository.transaction.entity.TransactionDTO;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -36,9 +36,7 @@ public class GetTransactionDetailInfoProcessor implements Processor <Transaction
     }
 
     private void composeResult(TransactionDetailRequest request, TransactionDetailResult result){
-        System.out.printf("request: "+ request.getTransactionId());
         Optional<TransactionDTO> dto = transactionRepository.findById(request.getTransactionId());
-        System.out.printf("dto: "+dto.toString());
         AssertUtil.isTrue(dto.isPresent(), "value of dto is null");
         TransactionDTO transactionDTO = dto.get();
         AssertUtil.notNull(transactionDTO, "transactionDTO is null");
